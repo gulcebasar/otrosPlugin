@@ -1,4 +1,3 @@
-import net.miginfocom.swing.MigLayout;
 import pl.otros.logview.api.gui.LogDataTableModel;
 import pl.otros.logview.api.model.LogData;
 import pl.otros.logview.api.pluginable.LogFilter;
@@ -6,8 +5,6 @@ import pl.otros.logview.api.pluginable.LogFilterValueChangeListener;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.io.*;
 import java.util.Properties;
 
@@ -17,24 +14,13 @@ import java.util.Properties;
 public class NewLogFilter implements LogFilter {
 
     private boolean enable;
-    private String name;
-    private String description;
+    private String name = "New Log Filter";
+    private String description = "description";
 //    private final JPanel gui;
     private final JCheckBox testCheckBox;
     private LogFilterValueChangeListener listener;
 
     public NewLogFilter (){
-
-        try{
-            String fileName = System.getProperty("user.home") + "/Desktop/test1-1.txt";
-            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-            writer.println("The first line");
-            writer.close();
-        } catch (IOException e) { }
-
-        this.name = "New Log Filter";
-        this.description = "description";
-        this.enable = true;
 
         testCheckBox = new JCheckBox("Show only entry/exits");
 
@@ -59,48 +45,7 @@ public class NewLogFilter implements LogFilter {
 //        gui = new JPanel(new MigLayout());
 //        gui.add(testLabel, "wrap, growx");
 //        gui.add(testJCombo, "right, wrap, growx");
-
-        try{
-            String fileName = System.getProperty("user.home") + "/Desktop/test1-2.txt";
-            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-            writer.println("The first line");
-            writer.close();
-        } catch (IOException e) { }
     }
-
-//    public NewLogFilter (String name, String description){
-//
-//        try{
-//            String fileName = System.getProperty("user.home") + "/Desktop/test2-1.txt";
-//            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-//            writer.println("The first line");
-//            writer.close();
-//        } catch (IOException e) { }
-//
-//        this.name = name;
-//        this.description = description;
-//        this.enable = true;
-//
-//        String[] testArr = {"test1", "test2"};
-//        JComboBox testJCombo = new JComboBox(testArr);
-//        testJCombo.setOpaque(true);
-//        testJCombo.setEditable(false);
-//
-//        JLabel testLabel = new JLabel("Test:");
-//        testLabel.setDisplayedMnemonic('l');
-//        testLabel.setLabelFor(testJCombo);
-//
-//        gui = new JPanel(new MigLayout());
-//        gui.add(testLabel, "wrap, growx");
-//        gui.add(testJCombo, "right, wrap, growx");
-//
-//        try{
-//            String fileName = System.getProperty("user.home") + "/Desktop/test2-2.txt";
-//            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-//            writer.println("The first line");
-//            writer.close();
-//        } catch (IOException e) { }
-//    }
 
     @Override
     public String getName() {return name;}
