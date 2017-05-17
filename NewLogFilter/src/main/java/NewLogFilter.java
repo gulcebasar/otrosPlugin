@@ -73,13 +73,6 @@ public class NewLogFilter implements LogFilter {
 
     @Override
     public Component getGUI() {
-        try{
-            String fileName = System.getProperty("user.home") + "/Desktop/test3.txt";
-            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-            writer.println("The first line");
-            writer.close();
-        } catch (IOException e) { }
-
         return testCheckBox;}
 
     @Override
