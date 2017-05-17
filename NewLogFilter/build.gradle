@@ -1,0 +1,32 @@
+group 'hey'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin:'application'
+mainClassName = "NewLogFilter"
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'NewLogFilter'
+        )
+    }
+}
+
+//project(':compileJava') {
+//
+//    sourceCompatibility = 1.8
+//    targetCompatibility = 1.8
+//}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+repositories {
+    mavenCentral()
+}
+
